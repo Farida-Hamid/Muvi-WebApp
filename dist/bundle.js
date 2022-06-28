@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  box-sizing: border-box;\n  text-decoration: none;\n}\n\nbody {\n  background-color: #22254b;\n  font-family: \"Poppins\", sans-serif;\n  margin: 0;\n  transition: all 250ms ease-out;\n}\n\na {\n  color: inherit;\n  transition: all 250ms ease-out;\n}\na:hover {\n  color: aqua;\n}\n\nheader {\n  background-color: #373b69;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  transition: all 250ms ease-out;\n}\nheader img {\n  width: 100px;\n}\n\n#discover {\n  display: flex;\n  gap: 50px;\n  justify-content: center;\n  align-items: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n#form {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.search {\n  background-color: transparent;\n  border: 2px solid #22254b;\n  border-radius: 50px;\n  font-family: inherit;\n  font-size: 1rem;\n  padding: 0.5rem 1rem;\n  color: #fff;\n}\n\n.search::placeholder {\n  color: #7378c5;\n}\n\n.search:focus {\n  outline: none;\n  background-color: #22254b;\n}\n\nmain {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n\n.movie {\n  width: 300px;\n  margin: 1rem;\n  background-color: #373b69;\n  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n  border-radius: 3px;\n  position: relative;\n}\n\n.movie img {\n  width: 100%;\n}\n\n.movie-info {\n  color: #eee;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0.5rem 1rem 1rem;\n  letter-spacing: 0.5px;\n}\n\n.movie-info h3 {\n  margin-top: 0;\n}\n\n.movie-info span {\n  background-color: #22254b;\n  padding: 0.25rem 0.5rem;\n  border-radius: 3px;\n  font-weight: bold;\n}\n\n.bi-heart.active {\n  animation: like 0.5s 1;\n  color: red;\n}\n\n.bi-heart {\n  color: white;\n  transition: all 0.5s;\n}\n\n.d-none {\n  display: none;\n}\n\n.movie-info span.green {\n  color: lightgreen;\n}\n\n.movie-info span.orange {\n  color: orange;\n}\n\n.movie-info span.red {\n  color: red;\n}\n\n.overview {\n  background-color: #fff;\n  padding: 2rem;\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  max-height: 100%;\n  transform: translateY(101%);\n  transition: transform 0.3s ease-in;\n  display: none;\n}\n\n.movie:hover .overview {\n  transform: translateY(0);\n  cursor: pointer;\n}\n\nfooter {\n  display: flex;\n  color: #fff;\n  background: #373b69;\n  justify-content: center;\n  padding: 10px 10px;\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  gap: 8px;\n}\n\n@keyframes like {\n  0% {\n    transform: scale(1);\n  }\n  90% {\n    transform: scale(1.2);\n  }\n  100% {\n    transform: scale(1.1);\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  box-sizing: border-box;\n  text-decoration: none;\n}\n\nbody {\n  background-color: #22254b;\n  font-family: \"Poppins\", sans-serif;\n  margin: 0;\n  transition: all 250ms ease-out;\n}\n\na {\n  color: inherit;\n  transition: all 250ms ease-out;\n}\na:hover {\n  color: aqua;\n}\n\nheader {\n  background-color: #373b69;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  transition: all 250ms ease-out;\n}\nheader img {\n  width: 100px;\n}\n\n#discover {\n  display: flex;\n  gap: 50px;\n  justify-content: center;\n  align-items: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n#form {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.search {\n  background-color: transparent;\n  border: 2px solid #22254b;\n  border-radius: 50px;\n  font-family: inherit;\n  font-size: 1rem;\n  padding: 0.5rem 1rem;\n  color: #fff;\n}\n\n.search::placeholder {\n  color: #7378c5;\n}\n\n.search:focus {\n  outline: none;\n  background-color: #22254b;\n}\n\nmain {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n\n.movie {\n  width: 300px;\n  margin: 1rem;\n  background-color: #373b69;\n  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n  border-radius: 3px;\n  position: relative;\n}\n\n.movie img {\n  width: 100%;\n}\n\n.movie-info {\n  color: #eee;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0.5rem 1rem 1rem;\n  letter-spacing: 0.5px;\n}\n\n.movie-info h3 {\n  margin-top: 0;\n}\n\n.movie-info span {\n  background-color: #22254b;\n  padding: 0.25rem 0.5rem;\n  border-radius: 3px;\n  font-weight: bold;\n}\n\n.bi-heart.active {\n  animation: like 0.5s 1;\n  color: red;\n}\n\n.bi-heart {\n  color: white;\n  transition: all 0.5s;\n}\n\n.d-none {\n  display: none;\n}\n\n.movie-info span.green {\n  color: lightgreen;\n}\n\n.movie-info span.orange {\n  color: orange;\n}\n\n.movie-info span.red {\n  color: red;\n}\n\n.overview {\n  background-color: #fff;\n  padding: 2rem;\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  max-height: 100%;\n  transform: translateY(101%);\n  transition: transform 0.3s ease-in;\n  display: none;\n}\n\n.movie:hover .overview {\n  transform: translateY(0);\n  cursor: pointer;\n}\n\nfooter {\n  display: flex;\n  color: #fff;\n  background: #373b69;\n  justify-content: center;\n  padding: 10px 10px;\n  position: fixed;\n  bottom: 0;\n  width: 100%;\n  gap: 8px;\n}\n\n@keyframes like {\n  0% {\n    transform: scale(1);\n  }\n  90% {\n    transform: scale(1.2);\n  }\n  100% {\n    transform: scale(1.1);\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -151,20 +151,6 @@ module.exports = function (cssWithMappingToString) {
 module.exports = function (i) {
   return i[1];
 };
-
-/***/ }),
-
-/***/ "./src/assets/cinema.jpg":
-/*!*******************************!*\
-  !*** ./src/assets/cinema.jpg ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "cinema.jpg");
 
 /***/ }),
 
@@ -550,26 +536,73 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "display": () => (/* binding */ display)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* eslint-disable camelcase */
+/* eslint-disable no-use-before-define */
+const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
+
 const container = document.querySelector('#main');
+const movieEl = document.createElement('div');
+movieEl.classList.add('movie');
 
-const display = () => {
-  console.log('called');
-
-  container.innerHTML += `    <div class="movie">
-  <img class="cinema" src="" alt="">
-  <div class="movie-info">
-    <h3>Movie Title</h3>
-    <span class="green"><i class="bi bi-heart" id="unlike"></i>8.5</span>
-  </div>
-  <div class="overview">
-    <h3>Overview</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam mollitia fugit nostrum voluptas voluptatum?
-      Aut at saepe quis vero facere!</p>
-  </div>
-</div>`;
+const display = (movies) => {
+  movies.forEach((movie) => {
+    const {
+      title, poster_path, vote_average, overview,
+    } = movie;
+    movieEl.innerHTML = `
+        <img src="${IMG_PATH + poster_path}" alt="${title}">
+        <div class="movie-info">
+      <h3>${title}</h3>
+      <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+        </div>
+        <div class="overview">
+      <h3>Overview</h3>
+      ${overview}
+    </div>
+    `;
+    container.appendChild(movieEl);
+  });
 };
+
+function getClassByRate(vote) {
+  if (vote >= 8) {
+    return 'green';
+  } if (vote >= 5) {
+    return 'orange';
+  }
+  return 'red';
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (display);
+
+/***/ }),
+
+/***/ "./src/getMovies.js":
+/*!**************************!*\
+  !*** ./src/getMovies.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "API_URL": () => (/* binding */ API_URL),
+/* harmony export */   "SEARCH_API": () => (/* binding */ SEARCH_API),
+/* harmony export */   "getMovies": () => (/* binding */ getMovies)
+/* harmony export */ });
+/* harmony import */ var _display_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./display.js */ "./src/display.js");
+
+
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=24997fed86518e9d29afc6b7f7510f37&page=1';
+const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?&api_key=24997fed86518e9d29afc6b7f7510f37&query="';
+
+// Get Initial Movies
+async function getMovies(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+  (0,_display_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data.results);
+}
 
 /***/ })
 
@@ -686,34 +719,30 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ "./src/styles/style.scss");
-/* harmony import */ var _assets_cinema_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/cinema.jpg */ "./src/assets/cinema.jpg");
-/* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/logo.svg */ "./src/assets/logo.svg");
-/* harmony import */ var _display__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./display */ "./src/display.js");
+/* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo.svg */ "./src/assets/logo.svg");
+/* harmony import */ var _getMovies_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getMovies.js */ "./src/getMovies.js");
 
 
 
 
-
-console.log('looping');
-for(let i=0; i<10; i++){
-  console.log('displaying');
-  (0,_display__WEBPACK_IMPORTED_MODULE_3__.display)();
-}
-
+(0,_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.API_URL);
+const form = document.getElementById('form');
+const search = document.getElementById('search');
 const logoIcon = document.getElementById('logo');
-logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"];
+logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__["default"];
 
-const cinemaImg = document.querySelectorAll('.cinema');
-cinemaImg.forEach((image) => {
-  image.src = _assets_cinema_jpg__WEBPACK_IMPORTED_MODULE_1__["default"];
-});
+// Add Event Lister to form For Serch inputs
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-const likeButton = document.querySelector('#unlike');
-likeButton.addEventListener('click', () => {
-  if (likeButton.classList.contains('bi-heart')) {
-    likeButton.classList.replace('bi-heart', 'bi-heart-fill');
-  } else if (likeButton.contains('bi-heart-fill')) {
-    likeButton.classList.replace('bi-heart-fill', 'bi-heart');
+  const searchTerm = search.value;
+
+  if (searchTerm && searchTerm !== '') {
+    (0,_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.SEARCH_API + searchTerm);
+
+    search.value = '';
+  } else {
+    window.location.reload();
   }
 });
 })();
