@@ -16,6 +16,15 @@ body {
   transition: $transition;
 }
 
+a {
+  color: inherit;
+  transition: $transition;
+
+  &:hover {
+    color: aqua;
+  }
+}
+
 header {
   background-color: $secondary-color;
   padding: 1rem;
@@ -35,15 +44,12 @@ header {
   align-items: center;
   color: #fff;
   font-size: 20px;
+}
 
-  a {
-    color: inherit;
-    transition: $transition;
-
-    &:hover {
-      color: aqua;
-    }
-  }
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search {
@@ -105,6 +111,21 @@ main {
   font-weight: bold;
 }
 
+// Like button
+.bi-heart.active {
+  animation: like 0.5s 1;
+  color: red;
+}
+
+.bi-heart {
+  color: white;
+  transition: all 0.5s;
+}
+
+.d-none {
+  display: none;
+}
+
 .movie-info span.green {
   color: lightgreen;
 }
@@ -128,9 +149,29 @@ main {
   max-height: 100%;
   transform: translateY(101%);
   transition: transform 0.3s ease-in;
+  display: none;
 }
 
 .movie:hover .overview {
   transform: translateY(0);
   cursor: pointer;
+}
+
+footer {
+  display: flex;
+  color: #fff;
+  background: $secondary-color;
+  justify-content: center;
+  padding: 10px 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  gap: 8px;
+}
+
+// like button
+@keyframes like {
+  0% { transform: scale(1); }
+  90% { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
 }
