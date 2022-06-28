@@ -20,8 +20,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: brown;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  box-sizing: border-box;\n  text-decoration: none;\n}\n\nbody {\n  background-color: #22254b;\n  font-family: \"Poppins\", sans-serif;\n  margin: 0;\n  transition: all 250ms ease-out;\n}\n\nheader {\n  background-color: #373b69;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  transition: all 250ms ease-out;\n}\nheader img {\n  width: 100px;\n}\n\n#discover {\n  display: flex;\n  gap: 50px;\n  justify-content: center;\n  align-items: center;\n  color: #fff;\n  font-size: 20px;\n}\n#discover a {\n  color: inherit;\n  transition: all 250ms ease-out;\n}\n#discover a:hover {\n  color: aqua;\n}\n\n.search {\n  background-color: transparent;\n  border: 2px solid #22254b;\n  border-radius: 50px;\n  font-family: inherit;\n  font-size: 1rem;\n  padding: 0.5rem 1rem;\n  color: #fff;\n}\n\n.search::placeholder {\n  color: #7378c5;\n}\n\n.search:focus {\n  outline: none;\n  background-color: #22254b;\n}\n\nmain {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n\n.movie {\n  width: 300px;\n  margin: 1rem;\n  background-color: #373b69;\n  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n  border-radius: 3px;\n  position: relative;\n}\n\n.movie img {\n  width: 100%;\n}\n\n.movie-info {\n  color: #eee;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0.5rem 1rem 1rem;\n  letter-spacing: 0.5px;\n}\n\n.movie-info h3 {\n  margin-top: 0;\n}\n\n.movie-info span {\n  background-color: #22254b;\n  padding: 0.25rem 0.5rem;\n  border-radius: 3px;\n  font-weight: bold;\n}\n\n.movie-info span.green {\n  color: lightgreen;\n}\n\n.movie-info span.orange {\n  color: orange;\n}\n\n.movie-info span.red {\n  color: red;\n}\n\n.overview {\n  background-color: #fff;\n  padding: 2rem;\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  max-height: 100%;\n  transform: translateY(101%);\n  transition: transform 0.3s ease-in;\n}\n\n.movie:hover .overview {\n  transform: translateY(0);\n  cursor: pointer;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -150,6 +151,34 @@ module.exports = function (cssWithMappingToString) {
 module.exports = function (i) {
   return i[1];
 };
+
+/***/ }),
+
+/***/ "./src/assets/cinema.jpg":
+/*!*******************************!*\
+  !*** ./src/assets/cinema.jpg ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "cinema.jpg");
+
+/***/ }),
+
+/***/ "./src/assets/logo.svg":
+/*!*****************************!*\
+  !*** ./src/assets/logo.svg ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "logo.svg");
 
 /***/ }),
 
@@ -564,6 +593,18 @@ module.exports = styleTagTransform;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -580,6 +621,26 @@ module.exports = styleTagTransform;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -594,7 +655,19 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ "./src/styles/style.scss");
+/* harmony import */ var _assets_cinema_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/cinema.jpg */ "./src/assets/cinema.jpg");
+/* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/logo.svg */ "./src/assets/logo.svg");
 
+
+
+
+const logoIcon = document.getElementById('logo');
+logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"];
+
+const cinemaImg = document.querySelectorAll('.cinema');
+cinemaImg.forEach((image) => {
+  image.src = _assets_cinema_jpg__WEBPACK_IMPORTED_MODULE_1__["default"];
+});
 })();
 
 /******/ })()

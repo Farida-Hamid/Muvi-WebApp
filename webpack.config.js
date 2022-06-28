@@ -12,7 +12,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     clean: true,
-    assetModuleFilename: '[name][ext]',
   },
   devServer: {
     static: {
@@ -30,12 +29,21 @@ module.exports = {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+    {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]'
+          }
+        }
+    }
     ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Movie WebApp',
+      title: 'Muvi WebApp',
       filename: 'index.html',
       template: 'src/index.html',
     }),
