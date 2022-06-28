@@ -1,6 +1,13 @@
 import './styles/style.scss';
 import cinema from './assets/cinema.jpg';
 import logo from './assets/logo.svg';
+import { display } from './display';
+
+console.log('looping');
+for(let i=0; i<10; i++){
+  console.log('displaying');
+  display();
+}
 
 const logoIcon = document.getElementById('logo');
 logoIcon.src = logo;

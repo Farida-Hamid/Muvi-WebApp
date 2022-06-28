@@ -540,6 +540,37 @@ function styleTagTransform(css, styleElement) {
 
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/display.js":
+/*!************************!*\
+  !*** ./src/display.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "display": () => (/* binding */ display)
+/* harmony export */ });
+const container = document.querySelector('#main');
+
+const display = () => {
+  console.log('called');
+
+  container.innerHTML += `    <div class="movie">
+  <img class="cinema" src="" alt="">
+  <div class="movie-info">
+    <h3>Movie Title</h3>
+    <span class="green"><i class="bi bi-heart" id="unlike"></i>8.5</span>
+  </div>
+  <div class="overview">
+    <h3>Overview</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam mollitia fugit nostrum voluptas voluptatum?
+      Aut at saepe quis vero facere!</p>
+  </div>
+</div>`;
+};
+
 /***/ })
 
 /******/ 	});
@@ -657,9 +688,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ "./src/styles/style.scss");
 /* harmony import */ var _assets_cinema_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/cinema.jpg */ "./src/assets/cinema.jpg");
 /* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/logo.svg */ "./src/assets/logo.svg");
+/* harmony import */ var _display__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./display */ "./src/display.js");
 
 
 
+
+
+console.log('looping');
+for(let i=0; i<10; i++){
+  console.log('displaying');
+  (0,_display__WEBPACK_IMPORTED_MODULE_3__.display)();
+}
 
 const logoIcon = document.getElementById('logo');
 logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"];
