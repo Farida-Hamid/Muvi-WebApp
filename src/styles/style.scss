@@ -109,17 +109,25 @@ main {
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-weight: bold;
+  display: flex;
+  gap: 5px;
 }
 
 // Like button
-.bi-heart.active {
-  animation: like 0.5s 1;
-  color: red;
+.bi {
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  transition: all 0.5s;
 }
 
 .bi-heart {
   color: white;
-  transition: all 0.5s;
+}
+
+.bi-heart-fill {
+  color: red;
+  animation: like 0.5s 1;
 }
 
 .d-none {

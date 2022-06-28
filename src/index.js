@@ -10,11 +10,16 @@ cinemaImg.forEach((image) => {
   image.src = cinema;
 });
 
-const likeButton = document.querySelector('#unlike');
+// Like Button
+const unlikeButton = document.querySelector('.unlike');
+const likeButton = document.querySelector('.like');
+unlikeButton.addEventListener('click', () => {
+  unlikeButton.classList.toggle('d-none');
+  likeButton.classList.remove('d-none');
+  likeButton.classList.toggle('active');
+});
+
 likeButton.addEventListener('click', () => {
-  if (likeButton.classList.contains('bi-heart')) {
-    likeButton.classList.replace('bi-heart', 'bi-heart-fill');
-  } else if (likeButton.contains('bi-heart-fill')) {
-    likeButton.classList.replace('bi-heart-fill', 'bi-heart');
-  }
+  unlikeButton.classList.remove('d-none');
+  likeButton.classList.add('d-none');
 });
