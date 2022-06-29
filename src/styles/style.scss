@@ -31,6 +31,11 @@ header {
   display: flex;
   justify-content: space-between;
   transition: $transition;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  white-space: nowrap;
 
   img {
     width: 100px;
@@ -72,9 +77,16 @@ header {
 }
 
 main {
+  position: absolute;
+  top: 10%;
+}
+
+#popular-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 30px;
+  margin-bottom: 30px;
 }
 
 .movie {
@@ -85,6 +97,16 @@ main {
   overflow: hidden;
   border-radius: 3px;
   position: relative;
+
+  button {
+    width: 45%;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    justify-content: center;
+  }
 }
 
 .movie img {
@@ -96,45 +118,63 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem 1rem;
+  padding: 8px 8px 16px;
   letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.interact {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 14px;
 }
 
 .movie-info h3 {
   margin-top: 0;
 }
 
-.movie-info span {
+.span {
   background-color: $primary-color;
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-weight: bold;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
 // Like button
-.bi-heart.active {
-  animation: like 0.5s 1;
-  color: red;
+.bi {
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  transition: all 0.5s;
 }
 
 .bi-heart {
   color: white;
-  transition: all 0.5s;
+}
+
+.bi-heart-fill {
+  color: red;
+  animation: like 0.5s 1;
 }
 
 .d-none {
   display: none;
 }
 
-.movie-info span.green {
+.span.green {
   color: lightgreen;
 }
 
-.movie-info span.orange {
+.span.orange {
   color: orange;
 }
 
-.movie-info span.red {
+.span.red {
   color: red;
 }
 
