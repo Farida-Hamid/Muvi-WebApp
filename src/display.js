@@ -15,7 +15,7 @@ const display = (movies) => {
           <h4>${title}</h4>
         </div>
   <div class="interact">
-          <button type="button" class="btn btn-info">Comment <i class="bi bi-chat"></i></button>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Comment<i class="bi bi-chat"></i></button>
           <span class="${getClassByRate(vote_average)} span">
           <i class="bi bi-heart unlike"></i>
           <i class="bi bi-heart-fill d-none like"></i>
