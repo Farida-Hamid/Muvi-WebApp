@@ -734,6 +734,22 @@ __webpack_require__.r(__webpack_exports__);
 (0,_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.API_URL);
 const logoIcon = document.getElementById('logo');
 logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__["default"];
+
+const form = document.getElementById('form');
+const search = document.getElementById('search');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const searchTerm = search.value;
+
+  if (searchTerm && searchTerm !== '') {
+    (0,_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.SEARCH_API + searchTerm);
+
+    search.value = '';
+  } else {
+    window.location.reload();
+  }
+});
 })();
 
 /******/ })()
