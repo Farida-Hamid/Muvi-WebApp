@@ -646,7 +646,6 @@ async function getMovies(url) {
   const res = await node_fetch__WEBPACK_IMPORTED_MODULE_1___default()(url);
   const data = await res.json();
   (0,_display_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data.results);
-  return data.results
 }
 
 /***/ })
