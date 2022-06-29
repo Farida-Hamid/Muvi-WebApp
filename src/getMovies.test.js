@@ -1,4 +1,4 @@
-import { getMovies, API_URL } from './getMovies.js';
+import { getMovies, API_URL } from './__mocks__/getMovies.js';
 
 describe('Test counters:', () => {
   test('1. Check movie counter', async () => {
