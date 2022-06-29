@@ -154,20 +154,6 @@ module.exports = function (i) {
 
 /***/ }),
 
-/***/ "./src/assets/cinema.jpg":
-/*!*******************************!*\
-  !*** ./src/assets/cinema.jpg ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "cinema.jpg");
-
-/***/ }),
-
 /***/ "./src/assets/logo.svg":
 /*!*****************************!*\
   !*** ./src/assets/logo.svg ***!
@@ -550,26 +536,74 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "display": () => (/* binding */ display)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const container = document.querySelector('#main');
+/* eslint-disable camelcase */
+/* eslint-disable no-use-before-define */
+const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
 
-const display = () => {
-  console.log('called');
+const container = document.querySelector('#popular-section');
 
-  container.innerHTML += `    <div class="movie">
-  <img class="cinema" src="" alt="">
-  <div class="movie-info">
-    <h3>Movie Title</h3>
-    <span class="green"><i class="bi bi-heart" id="unlike"></i>8.5</span>
+const display = (movies) => {
+  movies.forEach((movie) => {
+    const { title, poster_path, vote_average } = movie;
+    const movieEl = document.createElement('div');
+    movieEl.classList.add('movie');
+    movieEl.innerHTML = `
+        <img src="${IMG_PATH + poster_path}" alt="${title}">
+        <div class="movie-info">
+          <h4>${title}</h4>
+        </div>
+  <div class="interact">
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Comment<i class="bi bi-chat"></i></button>
+          <span class="${getClassByRate(vote_average)} span">
+          <i class="bi bi-heart unlike"></i>
+          <i class="bi bi-heart-fill d-none like"></i>
+          ${vote_average}
+        </span>
   </div>
-  <div class="overview">
-    <h3>Overview</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam mollitia fugit nostrum voluptas voluptatum?
-      Aut at saepe quis vero facere!</p>
-  </div>
-</div>`;
+      `;
+    container.appendChild(movieEl);
+  });
 };
+
+function getClassByRate(vote) {
+  if (vote >= 7) {
+    return 'green';
+  } if (vote >= 5) {
+    return 'orange';
+  }
+  return 'red';
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (display);
+
+/***/ }),
+
+/***/ "./src/getMovies.js":
+/*!**************************!*\
+  !*** ./src/getMovies.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "API_URL": () => (/* binding */ API_URL),
+/* harmony export */   "SEARCH_API": () => (/* binding */ SEARCH_API),
+/* harmony export */   "getMovies": () => (/* binding */ getMovies)
+/* harmony export */ });
+/* harmony import */ var _display_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./display.js */ "./src/display.js");
+
+
+const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=24997fed86518e9d29afc6b7f7510f37&page=1';
+const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?&api_key=24997fed86518e9d29afc6b7f7510f37&query="';
+
+// Get Initial Movies
+async function getMovies(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+  (0,_display_js__WEBPACK_IMPORTED_MODULE_0__["default"])((data.results));
+}
 
 /***/ })
 
@@ -686,36 +720,15 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ "./src/styles/style.scss");
-/* harmony import */ var _assets_cinema_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/cinema.jpg */ "./src/assets/cinema.jpg");
-/* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/logo.svg */ "./src/assets/logo.svg");
-/* harmony import */ var _display__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./display */ "./src/display.js");
+/* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo.svg */ "./src/assets/logo.svg");
+/* harmony import */ var _getMovies_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getMovies.js */ "./src/getMovies.js");
 
 
 
 
-
-console.log('looping');
-for(let i=0; i<10; i++){
-  console.log('displaying');
-  (0,_display__WEBPACK_IMPORTED_MODULE_3__.display)();
-}
-
+(0,_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.API_URL);
 const logoIcon = document.getElementById('logo');
-logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"];
-
-const cinemaImg = document.querySelectorAll('.cinema');
-cinemaImg.forEach((image) => {
-  image.src = _assets_cinema_jpg__WEBPACK_IMPORTED_MODULE_1__["default"];
-});
-
-const likeButton = document.querySelector('#unlike');
-likeButton.addEventListener('click', () => {
-  if (likeButton.classList.contains('bi-heart')) {
-    likeButton.classList.replace('bi-heart', 'bi-heart-fill');
-  } else if (likeButton.contains('bi-heart-fill')) {
-    likeButton.classList.replace('bi-heart-fill', 'bi-heart');
-  }
-});
+logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__["default"];
 })();
 
 /******/ })()
