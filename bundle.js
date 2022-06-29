@@ -577,14 +577,9 @@ __webpack_require__.r(__webpack_exports__);
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
 
 const container = document.querySelector('#popular-section');
-const counter = document.querySelector('#count');
 
 const display = (movies) => {
-  let movieCounter = 0;
-
   movies.forEach((movie) => {
-    movieCounter += 1;
-
     const { title, poster_path, vote_average } = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
@@ -604,7 +599,6 @@ const display = (movies) => {
       `;
     container.appendChild(movieEl);
   });
-  counter.innerHTML = `<p>We have ${movieCounter} movies 🎥 🍿</p>`;
 };
 
 function getClassByRate(vote) {
@@ -646,6 +640,9 @@ async function getMovies(url) {
   const res = await node_fetch__WEBPACK_IMPORTED_MODULE_1___default()(url);
   const data = await res.json();
   (0,_display_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data.results);
+
+  const counter = document.querySelector('#count');
+  counter.innerHTML = `<p>We have ${data.results.length} movies 🎥 🍿</p>`;
 }
 
 /***/ })
