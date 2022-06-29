@@ -548,7 +548,7 @@ const counter = document.querySelector('#count');
 
 const display = (movies) => {
   movies.forEach((movie) => {
-    movieCounter++;
+    movieCounter += 1;
     counter.innerHTML = `<p>We have ${movieCounter} movies</p>`;
 
     const { title, poster_path, vote_average } = movie;
