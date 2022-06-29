@@ -3,14 +3,9 @@
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
 
 const container = document.querySelector('#popular-section');
-const counter = document.querySelector('#count');
 
 const display = (movies) => {
-  let movieCounter = 0;
-
   movies.forEach((movie) => {
-    movieCounter += 1;
-
     const { title, poster_path, vote_average } = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
@@ -30,7 +25,6 @@ const display = (movies) => {
       `;
     container.appendChild(movieEl);
   });
-  counter.innerHTML = `<p>We have ${movieCounter} movies 🎥 🍿</p>`;
 };
 
 function getClassByRate(vote) {

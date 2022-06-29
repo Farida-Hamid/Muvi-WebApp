@@ -9,4 +9,7 @@ export async function getMovies(url) {
   const res = await fetch(url);
   const data = await res.json();
   display(data.results);
+
+  const counter = document.querySelector('#count');
+  counter.innerHTML = `<p>We have ${data.results.length} movies 🎥 🍿</p>`;
 }
