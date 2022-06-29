@@ -541,11 +541,14 @@ __webpack_require__.r(__webpack_exports__);
 /* eslint-disable camelcase */
 /* eslint-disable no-use-before-define */
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
+let movieCounter = 0;
 
 const container = document.querySelector('#popular-section');
 
 const display = (movies) => {
   movies.forEach((movie) => {
+    movieCounter++;
+    console.log(movieCounter);
     const { title, poster_path, vote_average } = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
