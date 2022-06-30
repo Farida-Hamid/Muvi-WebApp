@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-use-before-define */
 import popUP from './popUp.js';
+import likeFeature from './likeButton.js';
 
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
 let movieCounter = 0;
@@ -26,15 +27,19 @@ const display = (movies) => {
         </div>
   <div class="interact">
           <button type="button" class="btn btn-info comment" data-toggle="modal" data-target="#exampleModal">Comment<i class="bi bi-chat"></i></button>
+          <button type="button" class="like-btn">
+           <span class="icon">
+              <i class="fa-regular fa-heart"></i>
+           </span>
+          </button>
           <span class="${getClassByRate(vote_average)} span">
-          <i class="bi bi-heart unlike"></i>
-          <i class="bi bi-heart-fill d-none like"></i>
           ${vote_average}
         </span>
   </div>
       `;
     container.appendChild(movieEl);
   });
+  likeFeature();
   popUP(movies);
 };
 
