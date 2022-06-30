@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-use-before-define */
+
 import popUP from './popUp.js';
 import likeFeature from './likeButton.js';
 
@@ -20,6 +21,7 @@ const display = (movies) => {
           <h4>${title}</h4>
         </div>
   <div class="interact">
+
           <button type="button" class="btn btn-info comment" data-toggle="modal" data-target="#exampleModal">Comment<i class="bi bi-chat"></i></button>
           <button type="button" class="like-btn">
            <span class="icon">
@@ -33,6 +35,7 @@ const display = (movies) => {
       `;
     container.appendChild(movieEl);
   });
+
   likeFeature();
   popUP(movies);
 };
