@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  box-sizing: border-box;\n  text-decoration: none;\n}\n\nbody {\n  background-color: #22254b;\n  font-family: \"Poppins\", sans-serif;\n  margin: 0;\n  transition: all 250ms ease-out;\n}\n\na {\n  color: inherit;\n  transition: all 250ms ease-out;\n}\na:hover {\n  color: aqua;\n}\n\nheader {\n  background-color: #373b69;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  transition: all 250ms ease-out;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 1;\n  white-space: nowrap;\n  box-shadow: 0 3px 10px 0 rgba(75, 75, 75, 0.4509803922);\n}\nheader img {\n  width: 100px;\n}\n\n#count {\n  color: #fff;\n  font-size: 25px;\n  font-weight: 800;\n  text-align: center;\n  font-style: italic;\n}\n\n#discover {\n  display: flex;\n  gap: 50px;\n  justify-content: center;\n  align-items: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n#form {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.search {\n  background-color: transparent;\n  border: 2px solid #22254b;\n  border-radius: 50px;\n  font-family: inherit;\n  font-size: 1rem;\n  padding: 0.5rem 1rem;\n  color: #fff;\n}\n\n.search::placeholder {\n  color: #7378c5;\n}\n\n.search:focus {\n  outline: none;\n  background-color: #22254b;\n}\n\nmain {\n  position: absolute;\n  top: 10%;\n}\n\n#popular-section {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.movie {\n  width: 300px;\n  margin: 1rem;\n  background-color: #373b69;\n  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n  border-radius: 3px;\n  position: relative;\n}\n.movie .comment {\n  width: 45%;\n  padding: 8px;\n  border-radius: 5px;\n  display: flex;\n  gap: 10px;\n  cursor: pointer;\n  justify-content: center;\n}\n\n.movie img {\n  width: 100%;\n}\n\n.movie-info {\n  color: #eee;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 8px 8px 16px;\n  letter-spacing: 0.5px;\n  text-align: center;\n}\n\n.interact {\n  display: flex;\n  justify-self: center;\n  justify-content: center;\n  gap: 20px;\n  margin-bottom: 14px;\n}\n\n.movie-info h3 {\n  margin-top: 0;\n}\n\n.span {\n  background-color: #22254b;\n  padding: 0.25rem 0.5rem;\n  align-self: center;\n  border-radius: 3px;\n  font-weight: bold;\n  display: flex;\n  gap: 5px;\n  align-items: center;\n}\n\n.like-btn {\n  background-color: transparent;\n  border: none;\n  align-self: center;\n}\n.like-btn:focus {\n  outline: none;\n  border: none;\n}\n\n.fa-heart,\n.bi {\n  font-size: 20px;\n  cursor: pointer;\n  display: flex;\n  align-self: center;\n  transition: all 0.5s;\n}\n\n.fa-regular.fa-heart {\n  color: white;\n}\n\n.fa-solid.fa-heart {\n  color: red;\n  animation: like 0.5s 1;\n}\n\n.d-none {\n  display: none;\n}\n\n.span.green {\n  color: lightgreen;\n}\n\n.span.orange {\n  color: orange;\n}\n\n.span.red {\n  color: red;\n}\n\n.modal-header {\n  height: 600px;\n  overflow: hidden;\n}\n\n.modal-img {\n  display: block;\n  border-radius: 5px;\n  width: 100%;\n  height: 100%;\n}\n\n.modal-dialog {\n  max-width: 850px;\n  padding: 10px;\n}\n\nfooter {\n  display: flex;\n  color: #fff;\n  background: #373b69;\n  justify-content: center;\n  padding: 10px 10px;\n  position: fixed;\n  bottom: 0;\n  width: 100%;\n  gap: 8px;\n}\n\n@keyframes like {\n  0% {\n    transform: scale(1);\n  }\n  90% {\n    transform: scale(1.2);\n  }\n  100% {\n    transform: scale(1.1);\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  box-sizing: border-box;\n  text-decoration: none;\n}\n\nbody {\n  background-color: #22254b;\n  font-family: \"Poppins\", sans-serif;\n  margin: 0;\n  transition: all 250ms ease-out;\n}\n\na {\n  color: inherit;\n  transition: all 250ms ease-out;\n}\na:hover {\n  color: aqua;\n}\n\nheader {\n  background-color: #373b69;\n  padding: 1rem;\n  display: flex;\n  justify-content: space-between;\n  transition: all 250ms ease-out;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 1;\n  white-space: nowrap;\n  box-shadow: 0 3px 10px 0 rgba(75, 75, 75, 0.4509803922);\n}\nheader img {\n  width: 100px;\n}\n\n#count {\n  color: #fff;\n  font-size: 25px;\n  font-weight: 800;\n  text-align: center;\n  font-style: italic;\n}\n\n#discover {\n  display: flex;\n  gap: 50px;\n  justify-content: center;\n  align-items: center;\n  color: #fff;\n  font-size: 20px;\n}\n\n#form {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.search {\n  background-color: transparent;\n  border: 2px solid #22254b;\n  border-radius: 50px;\n  font-family: inherit;\n  font-size: 1rem;\n  padding: 0.5rem 1rem;\n  color: #fff;\n}\n\n.search::placeholder {\n  color: #7378c5;\n}\n\n.search:focus {\n  outline: none;\n  background-color: #22254b;\n}\n\nmain {\n  position: absolute;\n  top: 10%;\n}\n\n#popular-section {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.movie {\n  width: 300px;\n  margin: 1rem;\n  background-color: #373b69;\n  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);\n  overflow: hidden;\n  border-radius: 3px;\n  position: relative;\n}\n.movie .comment {\n  width: 45%;\n  padding: 8px;\n  border-radius: 5px;\n  display: flex;\n  gap: 10px;\n  cursor: pointer;\n  justify-content: center;\n}\n\n.movie img {\n  width: 100%;\n}\n\n.movie-info {\n  color: #eee;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 8px 8px 16px;\n  letter-spacing: 0.5px;\n  text-align: center;\n}\n\n.interact {\n  display: flex;\n  justify-self: center;\n  justify-content: center;\n  gap: 20px;\n  margin-bottom: 14px;\n}\n\n.movie-info h3 {\n  margin-top: 0;\n}\n\n.span {\n  background-color: #22254b;\n  padding: 0.25rem 0.5rem;\n  align-self: center;\n  border-radius: 3px;\n  font-weight: bold;\n  display: flex;\n  gap: 5px;\n  align-items: center;\n}\n\n.like-btn {\n  background-color: transparent;\n  border: none;\n  align-self: center;\n}\n.like-btn:focus {\n  outline: none;\n  border: none;\n}\n\n.fa-heart,\n.bi {\n  font-size: 20px;\n  cursor: pointer;\n  display: flex;\n  align-self: center;\n  transition: all 0.5s;\n}\n\n.fa-regular.fa-heart {\n  color: white;\n}\n\n.fa-solid.fa-heart {\n  color: red;\n  animation: like 0.5s 1;\n}\n\n.d-none {\n  display: none;\n}\n\n.span.green {\n  color: lightgreen;\n}\n\n.span.orange {\n  color: orange;\n}\n\n.span.red {\n  color: red;\n}\n\n.modal-header {\n  height: 600px;\n  overflow: hidden;\n}\n\n.modal-img {\n  display: block;\n  border-radius: 5px;\n  width: 100%;\n  height: 100%;\n}\n\n.modal-dialog {\n  max-width: 850px;\n  padding: 10px;\n}\n\n.comments-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  list-style: none;\n  gap: 8px;\n  overflow-y: auto;\n  max-height: 200px;\n}\n.comments-container li {\n  padding: 10px;\n  border: 1px #e2e5e9 solid;\n}\n\nfooter {\n  display: flex;\n  color: #fff;\n  background: #373b69;\n  justify-content: center;\n  padding: 10px 10px;\n  position: fixed;\n  bottom: 0;\n  width: 100%;\n  gap: 8px;\n}\n\n@keyframes like {\n  0% {\n    transform: scale(1);\n  }\n  90% {\n    transform: scale(1.2);\n  }\n  100% {\n    transform: scale(1.1);\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -528,32 +528,35 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/addComment.js":
-/*!***************************!*\
-  !*** ./src/addComment.js ***!
-  \***************************/
+/***/ "./src/modules/addComment.js":
+/*!***********************************!*\
+  !*** ./src/modules/addComment.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _fetchComments_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetchComments.js */ "./src/modules/fetchComments.js");
 /* eslint-disable camelcase */
+
+
 const commentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PBhw11GTdXlueafWDmvL/comments';
 
 const postComment = async (e) => {
-  console.log("adding");
   e.preventDefault();
   const movieID = e.target;
 
-  const name = document.getElementById('name').value;
-  const addComment = document.getElementById('added-comment').value;
+  const name = document.getElementById('name').value.trim();
+  const addComment = document.getElementById('added-comment').value.trim();
+  const commentForm = document.querySelector('.comment-form');
 
   if (name && addComment) {
     const result = await fetch(commentURL, {
       method: 'POST',
       body: JSON.stringify({
-        item_id: `${movieID}`,
+        item_id: `${movieID.id}`,
         username: `${name}`,
         comment: `${addComment}`,
       }),
@@ -561,32 +564,50 @@ const postComment = async (e) => {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-
+    commentForm.reset();
     await result.text();
-    const request = new Request(`${commentURL}?item_id=${movieID}`);
-    const response = await fetch(request);
-    const recieveComment = await response.json();
-    console.log(recieveComment);
-
+    (0,_fetchComments_js__WEBPACK_IMPORTED_MODULE_0__["default"])(movieID.id);
   }
-}
+};
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postComment);
 
 /***/ }),
 
-/***/ "./src/display.js":
-/*!************************!*\
-  !*** ./src/display.js ***!
-  \************************/
+/***/ "./src/modules/addcommentToDom.js":
+/*!****************************************!*\
+  !*** ./src/modules/addcommentToDom.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _popUp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popUp.js */ "./src/popUp.js");
-/* harmony import */ var _likeButton_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./likeButton.js */ "./src/likeButton.js");
+const addCommentToDom = (comments) => {
+  const commentList = document.querySelector('.comments-container');
+  commentList.innerHTML = '';
+  comments.forEach((comment) => {
+    commentList.innerHTML += `<li>${comment.creation_date}: ${comment.username}: ${comment.comment}</li>`;
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addCommentToDom);
+
+
+/***/ }),
+
+/***/ "./src/modules/display.js":
+/*!********************************!*\
+  !*** ./src/modules/display.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _popUp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popUp.js */ "./src/modules/popUp.js");
+/* harmony import */ var _likeButton_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./likeButton.js */ "./src/modules/likeButton.js");
 /* eslint-disable camelcase */
 /* eslint-disable no-use-before-define */
 
@@ -645,10 +666,39 @@ function getClassByRate(vote) {
 
 /***/ }),
 
-/***/ "./src/getMovies.js":
-/*!**************************!*\
-  !*** ./src/getMovies.js ***!
-  \**************************/
+/***/ "./src/modules/fetchComments.js":
+/*!**************************************!*\
+  !*** ./src/modules/fetchComments.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _addcommentToDom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addcommentToDom.js */ "./src/modules/addcommentToDom.js");
+
+
+const commentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PBhw11GTdXlueafWDmvL/comments';
+
+const fetchComments = async (id) => {
+  const request = new Request(`${commentURL}?item_id=${id}`);
+  const response = await fetch(request);
+  if (!response.ok) {
+    throw new Error('No comments added for this movie');
+  }
+  const recieveComment = await response.json();
+  (0,_addcommentToDom_js__WEBPACK_IMPORTED_MODULE_0__["default"])(recieveComment);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchComments);
+
+/***/ }),
+
+/***/ "./src/modules/getMovies.js":
+/*!**********************************!*\
+  !*** ./src/modules/getMovies.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -657,7 +707,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SEARCH_API": () => (/* binding */ SEARCH_API),
 /* harmony export */   "getMovies": () => (/* binding */ getMovies)
 /* harmony export */ });
-/* harmony import */ var _display_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./display.js */ "./src/display.js");
+/* harmony import */ var _display_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./display.js */ "./src/modules/display.js");
 
 
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=24997fed86518e9d29afc6b7f7510f37&page=1';
@@ -672,10 +722,10 @@ async function getMovies(url) {
 
 /***/ }),
 
-/***/ "./src/likeButton.js":
-/*!***************************!*\
-  !*** ./src/likeButton.js ***!
-  \***************************/
+/***/ "./src/modules/likeButton.js":
+/*!***********************************!*\
+  !*** ./src/modules/likeButton.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -696,18 +746,21 @@ const likeFeature = () => {
 
 /***/ }),
 
-/***/ "./src/popUp.js":
-/*!**********************!*\
-  !*** ./src/popUp.js ***!
-  \**********************/
+/***/ "./src/modules/popUp.js":
+/*!******************************!*\
+  !*** ./src/modules/popUp.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _addComment_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addComment.js */ "./src/addComment.js");
+/* harmony import */ var _addComment_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addComment.js */ "./src/modules/addComment.js");
+/* harmony import */ var _fetchComments_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetchComments.js */ "./src/modules/fetchComments.js");
 /* eslint-disable camelcase */
+
+
 
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
 
@@ -718,7 +771,9 @@ const popUP = (movies) => {
       const movieDiv = button.closest('.movie');
       movies.forEach((movie) => {
         if (movie.id === Number(movieDiv.id)) {
-          const { title, poster_path, overview, id } = movie;
+          const {
+            title, poster_path, overview, id,
+          } = movie;
           const modalPopUp = `
           <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -733,9 +788,7 @@ const popUP = (movies) => {
             .<div class="text-center">
               <p>${overview}</p>
             </div>
-            <ul class="comments">
-              <li>I love this move</li>
-              <li>This movie is the best I've seen</li>
+            <ul class="comments-container">
             </ul>
             <form class="form-group form-control p-4 comment-form">
               <input type="text" placeholder="Your name" class="form-group form-control" id="name">
@@ -746,6 +799,7 @@ const popUP = (movies) => {
         </div>
       </div>`;
           document.querySelector('#exampleModal').innerHTML = modalPopUp;
+          (0,_fetchComments_js__WEBPACK_IMPORTED_MODULE_1__["default"])(id);
           const submitButton = document.querySelector('.add-comment');
           submitButton.addEventListener('click', _addComment_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
         }
@@ -872,12 +926,12 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ "./src/styles/style.scss");
 /* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo.svg */ "./src/assets/logo.svg");
-/* harmony import */ var _getMovies_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getMovies.js */ "./src/getMovies.js");
+/* harmony import */ var _modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getMovies.js */ "./src/modules/getMovies.js");
 
 
 
 
-(0,_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.API_URL);
+(0,_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.API_URL);
 const logoIcon = document.getElementById('logo');
 logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__["default"];
 
@@ -889,7 +943,7 @@ form.addEventListener('submit', (e) => {
   const searchTerm = search.value;
 
   if (searchTerm && searchTerm !== '') {
-    (0,_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.SEARCH_API + searchTerm);
+    (0,_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.SEARCH_API + searchTerm);
 
     search.value = '';
   } else {
