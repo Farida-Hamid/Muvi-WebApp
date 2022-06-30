@@ -661,6 +661,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* eslint-disable camelcase */
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
+
 const popUP = (movies) => {
   const commentButton = document.querySelectorAll('.comment');
   commentButton.forEach((button) => {
@@ -687,10 +688,10 @@ const popUP = (movies) => {
               <li>I love this move</li>
               <li>This movie is the best I've seen</li>
             </ul>
-            <form class="form-group form-control p-4">
+            <form class="form-group form-control p-4 comment-form">
               <input type="text" placeholder="Your name" class="form-group form-control">
               <textarea class="form-control form-group" placeholder="Your Comment" style="height: 120px;"></textarea>
-              <button type="button" class="btn btn-info">Comment</button>
+              <button type="submit" class="btn btn-info">Comment</button>
             </form>
           </div>
         </div>
@@ -844,7 +845,6 @@ form.addEventListener('submit', (e) => {
     window.location.reload();
   }
 });
-
 })();
 
 /******/ })()
