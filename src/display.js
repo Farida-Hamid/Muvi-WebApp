@@ -10,8 +10,10 @@ const container = document.querySelector('#popular-section');
 
 const display = (movies) => {
   movies.forEach((movie) => {
-    const { title, poster_path, vote_average } = movie;
-    
+    const {
+      title, poster_path, vote_average, id,
+    } = movie;
+
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
     movieEl.id = (id);
