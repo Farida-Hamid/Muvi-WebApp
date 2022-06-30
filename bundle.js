@@ -528,6 +528,53 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/addComment.js":
+/*!***************************!*\
+  !*** ./src/addComment.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* eslint-disable camelcase */
+const commentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PBhw11GTdXlueafWDmvL/comments';
+
+const postComment = async (e) => {
+  console.log("adding");
+  e.preventDefault();
+  const movieID = e.target;
+
+  const name = document.getElementById('name').value;
+  const addComment = document.getElementById('added-comment').value;
+
+  if (name && addComment) {
+    const result = await fetch(commentURL, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: `${movieID}`,
+        username: `${name}`,
+        comment: `${addComment}`,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+
+    await result.text();
+    const request = new Request(`${commentURL}?item_id=${movieID}`);
+    const response = await fetch(request);
+    const recieveComment = await response.json();
+    console.log(recieveComment);
+
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postComment);
+
+/***/ }),
+
 /***/ "./src/display.js":
 /*!************************!*\
   !*** ./src/display.js ***!
@@ -659,7 +706,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _addComment_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addComment.js */ "./src/addComment.js");
 /* eslint-disable camelcase */
+
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
 
 const popUP = (movies) => {
@@ -669,7 +718,7 @@ const popUP = (movies) => {
       const movieDiv = button.closest('.movie');
       movies.forEach((movie) => {
         if (movie.id === Number(movieDiv.id)) {
-          const { title, poster_path, overview } = movie;
+          const { title, poster_path, overview, id } = movie;
           const modalPopUp = `
           <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -689,14 +738,16 @@ const popUP = (movies) => {
               <li>This movie is the best I've seen</li>
             </ul>
             <form class="form-group form-control p-4 comment-form">
-              <input type="text" placeholder="Your name" class="form-group form-control">
-              <textarea class="form-control form-group" placeholder="Your Comment" style="height: 120px;"></textarea>
-              <button type="submit" class="btn btn-info">Comment</button>
+              <input type="text" placeholder="Your name" class="form-group form-control" id="name">
+              <textarea class="form-control form-group" placeholder="Your Comment" style="height: 120px;" id="added-comment"></textarea>
+              <button type="button" class="add-comment btn btn-info" id=${id}>Comment</button>
             </form>
           </div>
         </div>
       </div>`;
           document.querySelector('#exampleModal').innerHTML = modalPopUp;
+          const submitButton = document.querySelector('.add-comment');
+          submitButton.addEventListener('click', _addComment_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
         }
       });
     });
