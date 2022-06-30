@@ -1,19 +1,21 @@
 /* eslint-disable camelcase */
+import fetchComments from './fetchComments.js';
+
 const commentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PBhw11GTdXlueafWDmvL/comments';
 
 const postComment = async (e) => {
-  console.log("adding");
   e.preventDefault();
   const movieID = e.target;
 
-  const name = document.getElementById('name').value;
-  const addComment = document.getElementById('added-comment').value;
+  const name = document.getElementById('name').value.trim();
+  const addComment = document.getElementById('added-comment').value.trim();
+  const commentForm = document.querySelector('.comment-form');
 
   if (name && addComment) {
     const result = await fetch(commentURL, {
       method: 'POST',
       body: JSON.stringify({
-        item_id: `${movieID}`,
+        item_id: `${movieID.id}`,
         username: `${name}`,
         comment: `${addComment}`,
       }),
@@ -21,14 +23,10 @@ const postComment = async (e) => {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-
+    commentForm.reset();
     await result.text();
-    const request = new Request(`${commentURL}?item_id=${movieID}`);
-    const response = await fetch(request);
-    const recieveComment = await response.json();
-    console.log(recieveComment);
-
+    fetchComments(movieID.id);
   }
-}
+};
 
 export default postComment;

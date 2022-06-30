@@ -158,10 +158,8 @@ main {
 // Like button
 .like-btn {
   background-color: transparent;
-  // height: fit-content;
   border: none;
   align-self: center;
-  // padding: 20px;
 
   &:focus {
     outline: none;
@@ -219,6 +217,21 @@ main {
 .modal-dialog {
   max-width: 850px;
   padding: 10px;
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  gap: 8px;
+  overflow-y: auto;
+  max-height: 200px;
+
+  li {
+    padding: 10px;
+    border: 1px #e2e5e9 solid;
+  }
 }
 
 footer {

@@ -1,5 +1,7 @@
 /* eslint-disable camelcase */
 import postComment from './addComment.js';
+import fetchComments from './fetchComments.js';
+
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
 
 const popUP = (movies) => {
@@ -9,7 +11,9 @@ const popUP = (movies) => {
       const movieDiv = button.closest('.movie');
       movies.forEach((movie) => {
         if (movie.id === Number(movieDiv.id)) {
-          const { title, poster_path, overview, id } = movie;
+          const {
+            title, poster_path, overview, id,
+          } = movie;
           const modalPopUp = `
           <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -24,9 +28,7 @@ const popUP = (movies) => {
             .<div class="text-center">
               <p>${overview}</p>
             </div>
-            <ul class="comments">
-              <li>I love this move</li>
-              <li>This movie is the best I've seen</li>
+            <ul class="comments-container">
             </ul>
             <form class="form-group form-control p-4 comment-form">
               <input type="text" placeholder="Your name" class="form-group form-control" id="name">
@@ -37,6 +39,7 @@ const popUP = (movies) => {
         </div>
       </div>`;
           document.querySelector('#exampleModal').innerHTML = modalPopUp;
+          fetchComments(id);
           const submitButton = document.querySelector('.add-comment');
           submitButton.addEventListener('click', postComment);
         }
