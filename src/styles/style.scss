@@ -107,7 +107,7 @@ main {
   border-radius: 3px;
   position: relative;
 
-  button {
+  .comment {
     width: 45%;
     padding: 8px;
     border-radius: 5px;
@@ -147,6 +147,7 @@ main {
 .span {
   background-color: $primary-color;
   padding: 0.25rem 0.5rem;
+  align-self: center;
   border-radius: 3px;
   font-weight: bold;
   display: flex;
@@ -155,18 +156,33 @@ main {
 }
 
 // Like button
+.like-btn {
+  background-color: transparent;
+  // height: fit-content;
+  border: none;
+  align-self: center;
+  // padding: 20px;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+.fa-heart,
 .bi {
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   align-self: center;
   transition: all 0.5s;
 }
 
-.bi-heart {
+.fa-regular.fa-heart {
   color: white;
 }
 
-.bi-heart-fill {
+.fa-solid.fa-heart {
   color: red;
   animation: like 0.5s 1;
 }
@@ -187,23 +203,22 @@ main {
   color: red;
 }
 
-.overview {
-  background-color: #fff;
-  padding: 2rem;
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  max-height: 100%;
-  transform: translateY(101%);
-  transition: transform 0.3s ease-in;
-  display: none;
+// Modal/PopUp style
+.modal-header {
+  height: 600px;
+  overflow: hidden;
 }
 
-.movie:hover .overview {
-  transform: translateY(0);
-  cursor: pointer;
+.modal-img {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-dialog {
+  max-width: 850px;
+  padding: 10px;
 }
 
 footer {
