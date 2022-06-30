@@ -4,19 +4,13 @@ import popUP from './popUp.js';
 import likeFeature from './likeButton.js';
 
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
-let movieCounter = 0;
 
 const container = document.querySelector('#popular-section');
-const counter = document.querySelector('#count');
 
 const display = (movies) => {
   movies.forEach((movie) => {
-    movieCounter += 1;
-    counter.innerHTML = `<p>We have ${movieCounter} movies 🎥 🍿</p>`;
-
-    const {
-      title, poster_path, vote_average, id,
-    } = movie;
+    const { title, poster_path, vote_average } = movie;
+    
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
     movieEl.id = (id);

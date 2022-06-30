@@ -168,6 +168,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/node-fetch/browser.js":
+/*!********************************************!*\
+  !*** ./node_modules/node-fetch/browser.js ***!
+  \********************************************/
+/***/ ((module, exports) => {
+
+
+
+// ref: https://github.com/tc39/proposal-global
+var getGlobal = function () {
+	// the only reliable means to get the global object is
+	// `Function('return this')()`
+	// However, this causes CSP violations in Chrome apps.
+	if (typeof self !== 'undefined') { return self; }
+	if (typeof window !== 'undefined') { return window; }
+	if (typeof global !== 'undefined') { return global; }
+	throw new Error('unable to locate global object');
+}
+
+var global = getGlobal();
+
+module.exports = exports = global.fetch;
+
+// Needed for TypeScript and Webpack.
+if (global.fetch) {
+	exports["default"] = global.fetch.bind(global);
+}
+
+exports.Headers = global.Headers;
+exports.Request = global.Request;
+exports.Response = global.Response;
+
+/***/ }),
+
 /***/ "./src/styles/style.scss":
 /*!*******************************!*\
   !*** ./src/styles/style.scss ***!
@@ -546,19 +580,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
-let movieCounter = 0;
 
 const container = document.querySelector('#popular-section');
-const counter = document.querySelector('#count');
 
 const display = (movies) => {
   movies.forEach((movie) => {
-    movieCounter += 1;
-    counter.innerHTML = `<p>We have ${movieCounter} movies 🎥 🍿</p>`;
+    const { title, poster_path, vote_average } = movie;
 
-    const {
-      title, poster_path, vote_average, id,
-    } = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
     movieEl.id = (id);
@@ -611,6 +639,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getMovies": () => (/* binding */ getMovies)
 /* harmony export */ });
 /* harmony import */ var _display_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./display.js */ "./src/display.js");
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! node-fetch */ "./node_modules/node-fetch/browser.js");
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=24997fed86518e9d29afc6b7f7510f37&page=1';
@@ -618,9 +649,12 @@ const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?&api_key=24997fed8
 
 // Get Initial Movies
 async function getMovies(url) {
-  const res = await fetch(url);
+  const res = await node_fetch__WEBPACK_IMPORTED_MODULE_1___default()(url);
   const data = await res.json();
-  (0,_display_js__WEBPACK_IMPORTED_MODULE_0__["default"])((data.results));
+  (0,_display_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data.results);
+
+  const counter = document.querySelector('#count');
+  counter.innerHTML = `<p>We have ${data.results.length} movies 🎥 🍿</p>`;
 }
 
 /***/ }),
@@ -826,6 +860,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.API_URL);
+
 const logoIcon = document.getElementById('logo');
 logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__["default"];
 
