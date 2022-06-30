@@ -1,4 +1,5 @@
 /* eslint-disable camelcase */
+import postComment from './addComment.js';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
 
 const popUP = (movies) => {
@@ -8,7 +9,7 @@ const popUP = (movies) => {
       const movieDiv = button.closest('.movie');
       movies.forEach((movie) => {
         if (movie.id === Number(movieDiv.id)) {
-          const { title, poster_path, overview } = movie;
+          const { title, poster_path, overview, id } = movie;
           const modalPopUp = `
           <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -28,14 +29,16 @@ const popUP = (movies) => {
               <li>This movie is the best I've seen</li>
             </ul>
             <form class="form-group form-control p-4 comment-form">
-              <input type="text" placeholder="Your name" class="form-group form-control">
-              <textarea class="form-control form-group" placeholder="Your Comment" style="height: 120px;"></textarea>
-              <button type="submit" class="btn btn-info">Comment</button>
+              <input type="text" placeholder="Your name" class="form-group form-control" id="name">
+              <textarea class="form-control form-group" placeholder="Your Comment" style="height: 120px;" id="added-comment"></textarea>
+              <button type="button" class="add-comment btn btn-info" id=${id}>Comment</button>
             </form>
           </div>
         </div>
       </div>`;
           document.querySelector('#exampleModal').innerHTML = modalPopUp;
+          const submitButton = document.querySelector('.add-comment');
+          submitButton.addEventListener('click', postComment);
         }
       });
     });
