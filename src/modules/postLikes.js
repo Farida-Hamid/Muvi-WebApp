@@ -14,7 +14,6 @@ const postLikes = async (itemID) => {
   });
   result.text();
   getLikes();
-
 };
 
 export default postLikes;
