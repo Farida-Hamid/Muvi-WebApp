@@ -7,5 +7,9 @@ export const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?&api_key=24
 export async function getMovies(url) {
   const res = await fetch(url);
   const data = await res.json();
-  display((data.results));
+
+  display(data.results);
+
+  const counter = document.querySelector('#count');
+  counter.innerHTML = `<p>We have ${data.results.length} movies 🎥 🍿</p>`;
 }
