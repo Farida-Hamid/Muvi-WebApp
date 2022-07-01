@@ -40,6 +40,7 @@ const popUP = (movies) => {
       </div>`;
           document.querySelector('#exampleModal').innerHTML = modalPopUp;
           fetchComments(id);
+
           const submitButton = document.querySelector('.add-comment');
           submitButton.addEventListener('click', postComment);
         }
