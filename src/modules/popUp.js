@@ -39,9 +39,16 @@ const popUP = (movies) => {
         </div>
       </div>`;
           document.querySelector('#exampleModal').innerHTML = modalPopUp;
-          fetchComments(id);
+          ;
           const submitButton = document.querySelector('.add-comment');
           submitButton.addEventListener('click', postComment);
+
+          let counter = 0
+          fetchComments(id).then(function(results) {
+          counter = results;
+          console.log(counter);
+            
+          });
         }
       });
     });
