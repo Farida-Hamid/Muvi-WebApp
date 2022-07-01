@@ -613,20 +613,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
-let movieCounter = 0;
 
 const container = document.querySelector('#popular-section');
-const counter = document.querySelector('#count');
 
 const display = (movies) => {
   movies.forEach((movie) => {
-    movieCounter += 1;
-    counter.innerHTML = `<p>We have ${movieCounter} movies 🎥 🍿</p>`;
-
     const {
       title, poster_path, vote_average, id,
     } = movie;
+
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
     movieEl.id = (id);
@@ -636,6 +633,7 @@ const display = (movies) => {
           <h4>${title}</h4>
         </div>
   <div class="interact">
+
           <button type="button" class="btn btn-info comment" data-toggle="modal" data-target="#exampleModal">Comment<i class="bi bi-chat"></i></button>
           <button type="button" class="like-btn">
            <span class="icon">
@@ -649,6 +647,7 @@ const display = (movies) => {
       `;
     container.appendChild(movieEl);
   });
+
   (0,_likeButton_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_popUp_js__WEBPACK_IMPORTED_MODULE_0__["default"])(movies);
 };
@@ -717,7 +716,11 @@ const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?&api_key=24997fed8
 async function getMovies(url) {
   const res = await fetch(url);
   const data = await res.json();
-  (0,_display_js__WEBPACK_IMPORTED_MODULE_0__["default"])((data.results));
+
+  (0,_display_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data.results);
+
+  const counter = document.querySelector('#count');
+  counter.innerHTML = `<p>We have ${data.results.length} movies 🎥 🍿</p>`;
 }
 
 /***/ }),
@@ -931,8 +934,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 (0,_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.API_URL);
 const logoIcon = document.getElementById('logo');
+
 logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__["default"];
 
 const form = document.getElementById('form');

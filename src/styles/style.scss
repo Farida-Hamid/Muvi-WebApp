@@ -248,7 +248,15 @@ footer {
 
 // like button
 @keyframes like {
-  0% { transform: scale(1); }
-  90% { transform: scale(1.2); }
-  100% { transform: scale(1.1); }
+  0% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
 }
