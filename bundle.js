@@ -609,7 +609,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _popUp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popUp.js */ "./src/modules/popUp.js");
 /* harmony import */ var _likeButton_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./likeButton.js */ "./src/modules/likeButton.js");
 /* eslint-disable camelcase */
-/* eslint-disable no-use-before-define */
 
 
 
@@ -617,6 +616,15 @@ __webpack_require__.r(__webpack_exports__);
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
 
 const container = document.querySelector('#popular-section');
+
+const getClassByRate = (vote) => {
+  if (vote >= 7) {
+    return 'green';
+  } if (vote >= 5) {
+    return 'orange';
+  }
+  return 'red';
+};
 
 const display = (movies) => {
   movies.forEach((movie) => {
@@ -637,11 +645,10 @@ const display = (movies) => {
           <button type="button" class="btn btn-info comment" data-toggle="modal" data-target="#exampleModal">Comment<i class="bi bi-chat"></i></button>
           <button type="button" class="like-btn">
            <span class="icon">
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart" id=${id}></i>
            </span>
           </button>
-          <span class="${getClassByRate(vote_average)} span">
-          ${vote_average}
+          <span class="${getClassByRate(vote_average)} span count-likes" id=${id}>
         </span>
   </div>
       `;
@@ -651,15 +658,6 @@ const display = (movies) => {
   (0,_likeButton_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_popUp_js__WEBPACK_IMPORTED_MODULE_0__["default"])(movies);
 };
-
-function getClassByRate(vote) {
-  if (vote >= 7) {
-    return 'green';
-  } if (vote >= 5) {
-    return 'orange';
-  }
-  return 'red';
-}
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (display);
 
@@ -725,6 +723,43 @@ async function getMovies(url) {
 
 /***/ }),
 
+/***/ "./src/modules/getlikes.js":
+/*!*********************************!*\
+  !*** ./src/modules/getlikes.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const likesURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PBhw11GTdXlueafWDmvL/likes';
+
+const getLikes = async () => {
+  const request = new Request(likesURL);
+  const response = await fetch(request);
+  const likesCount = await response.json();
+
+  const moviesLikes = document.querySelectorAll('.count-likes');
+
+  for (let i = 0; i < moviesLikes.length; i += 1) {
+    let flag = false;
+    for (let j = 0; j < likesCount.length; j += 1) {
+      if (moviesLikes[i].id === likesCount[j].item_id) {
+        flag = true;
+        moviesLikes[i].textContent = likesCount[j].likes;
+      }
+    }
+    if (!flag) {
+      moviesLikes[i].textContent = 0;
+    }
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getLikes);
+
+/***/ }),
+
 /***/ "./src/modules/likeButton.js":
 /*!***********************************!*\
   !*** ./src/modules/likeButton.js ***!
@@ -735,16 +770,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _postLikes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./postLikes.js */ "./src/modules/postLikes.js");
+
+
 const likeFeature = () => {
   const movieDiv = document.querySelectorAll('.movie');
   movieDiv.forEach((div) => {
     div.addEventListener('click', (e) => {
       if (e.target.classList.contains('fa-heart')) {
-        e.target.classList.toggle('fa-solid');
+        e.target.classList.replace('fa-regular', 'fa-solid');
+        const movieID = e.target.id;
+        (0,_postLikes_js__WEBPACK_IMPORTED_MODULE_0__["default"])(movieID);
       }
     });
   });
 };
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (likeFeature);
 
 /***/ }),
@@ -803,6 +844,7 @@ const popUP = (movies) => {
       </div>`;
           document.querySelector('#exampleModal').innerHTML = modalPopUp;
           (0,_fetchComments_js__WEBPACK_IMPORTED_MODULE_1__["default"])(id);
+
           const submitButton = document.querySelector('.add-comment');
           submitButton.addEventListener('click', _addComment_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
         }
@@ -812,6 +854,41 @@ const popUP = (movies) => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (popUP);
+
+/***/ }),
+
+/***/ "./src/modules/postLikes.js":
+/*!**********************************!*\
+  !*** ./src/modules/postLikes.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _getlikes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getlikes.js */ "./src/modules/getlikes.js");
+
+
+const likesURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PBhw11GTdXlueafWDmvL/likes';
+
+const postLikes = async (itemID) => {
+  const result = await fetch(likesURL, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: itemID,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  result.text();
+  (0,_getlikes_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postLikes);
+
 
 /***/ })
 
@@ -929,13 +1006,15 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ "./src/styles/style.scss");
 /* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo.svg */ "./src/assets/logo.svg");
-/* harmony import */ var _modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getMovies.js */ "./src/modules/getMovies.js");
+/* harmony import */ var _modules_getlikes_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getlikes.js */ "./src/modules/getlikes.js");
+/* harmony import */ var _modules_getMovies_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/getMovies.js */ "./src/modules/getMovies.js");
 
 
 
 
 
-(0,_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.API_URL);
+(0,_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_3__.getMovies)(_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_3__.API_URL);
+(0,_modules_getlikes_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
 const logoIcon = document.getElementById('logo');
 
 logoIcon.src = _assets_logo_svg__WEBPACK_IMPORTED_MODULE_1__["default"];
@@ -948,7 +1027,7 @@ form.addEventListener('submit', (e) => {
   const searchTerm = search.value;
 
   if (searchTerm && searchTerm !== '') {
-    (0,_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.getMovies)(_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_2__.SEARCH_API + searchTerm);
+    (0,_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_3__.getMovies)(_modules_getMovies_js__WEBPACK_IMPORTED_MODULE_3__.SEARCH_API + searchTerm);
 
     search.value = '';
   } else {
