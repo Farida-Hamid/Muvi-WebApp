@@ -1,8 +1,10 @@
 import './styles/style.scss';
 import logo from './assets/logo.svg';
+import getLikes from './getlikes.js';
 import { getMovies, API_URL, SEARCH_API } from './modules/getMovies.js';
 
 getMovies(API_URL);
+getLikes();
 const logoIcon = document.getElementById('logo');
 logoIcon.src = logo;
 

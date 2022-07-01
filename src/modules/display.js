@@ -29,11 +29,10 @@ const display = (movies) => {
           <button type="button" class="btn btn-info comment" data-toggle="modal" data-target="#exampleModal">Comment<i class="bi bi-chat"></i></button>
           <button type="button" class="like-btn">
            <span class="icon">
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart" id=${id}></i>
            </span>
           </button>
-          <span class="${getClassByRate(vote_average)} span">
-          ${vote_average}
+          <span class="${getClassByRate(vote_average)} span count-likes" id=${id}>
         </span>
   </div>
       `;
