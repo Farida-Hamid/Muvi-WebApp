@@ -10,14 +10,14 @@ const getLikes = async () => {
   for (let i = 0; i < moviesLikes.length; i += 1) {
     let flag = false;
     for (let j = 0; j < likesCount.length; j += 1) {
-      if(moviesLikes[i].id === likesCount[j].item_id){
+      if (moviesLikes[i].id === likesCount[j].item_id) {
         flag = true;
       }
     }
-    if(!flag){
+    if (!flag) {
       moviesLikes[i].textContent = 0;
     }
-  };
-}
+  }
+};
 
 export default getLikes;
