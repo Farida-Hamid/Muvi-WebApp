@@ -10,7 +10,7 @@ const postLikes = async (itemID) => {
       'Content-Type': 'application/json',
     },
   });
-  await result.text();
+  result.text();
 };
 
 export default postLikes;
