@@ -30,7 +30,7 @@ const popUP = (movies) => {
             </div>
             <ul class="comments-container">
             </ul>
-            <p class="comments-counter"></p>
+            <p class="comments-counter" id=${id}></p>
             <form class="form-group form-control p-4 comment-form">
               <input type="text" placeholder="Your name" class="form-group form-control" id="name">
               <textarea class="form-control form-group" placeholder="Your Comment" style="height: 120px;" id="added-comment"></textarea>

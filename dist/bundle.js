@@ -584,15 +584,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const addCommentToDom = (comments) => {
+const addCommentToDom = (comments, ) => {
   const commentList = document.querySelector('.comments-container');
   commentList.innerHTML = '';
   comments.forEach((comment) => {
     commentList.innerHTML += `<li>${comment.creation_date}: ${comment.username}: ${comment.comment}</li>`;
   });
 };
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addCommentToDom);
 
+
+/***/ }),
+
+/***/ "./src/modules/commentCounter.js":
+/*!***************************************!*\
+  !*** ./src/modules/commentCounter.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const countComments = async (comments) => comments.length;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (countComments);
 
 /***/ }),
 
@@ -674,6 +691,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _addcommentToDom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addcommentToDom.js */ "./src/modules/addcommentToDom.js");
+/* harmony import */ var _commentCounter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./commentCounter.js */ "./src/modules/commentCounter.js");
+
 
 
 const commentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PBhw11GTdXlueafWDmvL/comments';
@@ -681,11 +700,22 @@ const commentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capst
 const fetchComments = async (id) => {
   const request = new Request(`${commentURL}?item_id=${id}`);
   const response = await fetch(request);
+  const displayCount = document.querySelector('.comments-counter');
+
+  // display 0 comments if no comments were found
   if (!response.ok) {
-    throw new Error('No comments added for this movie');
+    displayCount.innerHTML = `0 comments`;
   }
   const recieveComment = await response.json();
   (0,_addcommentToDom_js__WEBPACK_IMPORTED_MODULE_0__["default"])(recieveComment);
+
+  // display number of comments
+  (0,_commentCounter_js__WEBPACK_IMPORTED_MODULE_1__["default"])(recieveComment).then((results) => {
+    if (!results.ok) {
+      displayCount.innerHTML = `${results} comments`;
+    }
+    
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchComments);
@@ -829,11 +859,12 @@ const popUP = (movies) => {
           </div>
           <div class="modal-body">
           <h3 class="text-center">${title}</h3>
-            .<div class="text-center">
+            <div class="text-center">
               <p>${overview}</p>
             </div>
             <ul class="comments-container">
             </ul>
+            <p class="comments-counter" id=${id}></p>
             <form class="form-group form-control p-4 comment-form">
               <input type="text" placeholder="Your name" class="form-group form-control" id="name">
               <textarea class="form-control form-group" placeholder="Your Comment" style="height: 120px;" id="added-comment"></textarea>

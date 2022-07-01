@@ -6,14 +6,22 @@ const commentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capst
 const fetchComments = async (id) => {
   const request = new Request(`${commentURL}?item_id=${id}`);
   const response = await fetch(request);
+  const displayCount = document.querySelector('.comments-counter');
+
+  // display 0 comments if no comments were found
   if (!response.ok) {
-    return 0;
-    // throw new Error('No comments added for this movie');
+    displayCount.innerHTML = `0 comments`;
   }
   const recieveComment = await response.json();
   addCommentToDom(recieveComment);
 
-  return countComments(recieveComment);
+  // display number of comments
+  countComments(recieveComment).then((results) => {
+    if (!results.ok) {
+      displayCount.innerHTML = `${results} comments`;
+    }
+    
+  });
 };
 
 export default fetchComments;
