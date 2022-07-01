@@ -25,11 +25,12 @@ const popUP = (movies) => {
           </div>
           <div class="modal-body">
           <h3 class="text-center">${title}</h3>
-            .<div class="text-center">
+            <div class="text-center">
               <p>${overview}</p>
             </div>
             <ul class="comments-container">
             </ul>
+            <p class="comments-counter"></p>
             <form class="form-group form-control p-4 comment-form">
               <input type="text" placeholder="Your name" class="form-group form-control" id="name">
               <textarea class="form-control form-group" placeholder="Your Comment" style="height: 120px;" id="added-comment"></textarea>
@@ -39,15 +40,10 @@ const popUP = (movies) => {
         </div>
       </div>`;
           document.querySelector('#exampleModal').innerHTML = modalPopUp;
+          fetchComments(id);
 
           const submitButton = document.querySelector('.add-comment');
           submitButton.addEventListener('click', postComment);
-
-          let counter = 0;
-          fetchComments(id).then((results) => {
-            counter = results;
-            console.log(counter);
-          });
         }
       });
     });
