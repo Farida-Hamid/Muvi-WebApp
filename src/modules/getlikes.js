@@ -12,6 +12,7 @@ const getLikes = async () => {
     for (let j = 0; j < likesCount.length; j += 1) {
       if (moviesLikes[i].id === likesCount[j].item_id) {
         flag = true;
+        moviesLikes[i].textContent = likesCount[j].likes;
       }
     }
     if (!flag) {

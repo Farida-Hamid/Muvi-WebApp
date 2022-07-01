@@ -38,8 +38,7 @@ const display = (movies) => {
               <i class="fa-regular fa-heart"></i>
            </span>
           </button>
-          <span class="${getClassByRate(vote_average)} span">
-          ${vote_average}
+          <span class="${getClassByRate(vote_average)} span count-likes" id=${id}>
         </span>
   </div>
       `;
