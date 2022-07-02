@@ -13,8 +13,8 @@
 
 ## Live Demo
 
-- [App Live Link](https://killy10o10.github.io/Muvi-Webapp/)
-- [Video Demo](https://killy10o10.github.io/Muvi-Webapp/)
+- [App Live Link](https://farida-hamid.github.io/Muvi-WebApp/)
+- [Video Demo](https://drive.google.com/file/d/1YgINmgDuNW5s2WAiRPYr1er2hAlFUZcT/view?usp=sharing)
 
 
 ## Getting Started
