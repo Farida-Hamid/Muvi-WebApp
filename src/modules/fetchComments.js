@@ -10,17 +10,15 @@ const fetchComments = async (id) => {
 
   // display 0 comments if no comments were found
   if (!response.ok) {
-    displayCount.innerHTML = `0 comments`;
+    displayCount.innerHTML = '0 comments';
+    throw new Error('No comments added for this movie');
   }
   const recieveComment = await response.json();
   addCommentToDom(recieveComment);
 
   // display number of comments
   countComments(recieveComment).then((results) => {
-    if (!results.ok) {
-      displayCount.innerHTML = `${results} comments`;
-    }
-    
+    displayCount.innerHTML = `${results} comment(s)`;
   });
 };
 

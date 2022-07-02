@@ -1,4 +1,4 @@
-const addCommentToDom = (comments, ) => {
+const addCommentToDom = (comments) => {
   const commentList = document.querySelector('.comments-container');
   commentList.innerHTML = '';
   comments.forEach((comment) => {
