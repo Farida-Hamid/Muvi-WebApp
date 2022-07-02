@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Task list App
+# Muvi Web App
 
 > This project is a web app about Movies, we fetched all data from TMBD API, Users can like movies and also give a comment. All data are recorded in the involvement API and also displayed on the screen. 
 
@@ -13,8 +13,8 @@
 
 ## Live Demo
 
-- [App Live Link](https://killy10o10.github.io/task-list/)
-- [Video Demo](https://youtu.be/tN6Aw3JUt0M)
+- [App Live Link](https://farida-hamid.github.io/Muvi-WebApp/)
+- [Video Demo](https://drive.google.com/file/d/1YgINmgDuNW5s2WAiRPYr1er2hAlFUZcT/view?usp=sharing)
 
 
 ## Getting Started
